@@ -1,9 +1,13 @@
 //
 // Created by malak on 1/3/2023.
 //
+// This code implemented from the pseudo code: https://en.wikipedia.org/wiki/Insertion_sort.
+
+
 #include <stdio.h>
 
 #define SIZE 50
+
 static int SWITCH = 0;
 
 void print(int *, int);
@@ -14,13 +18,9 @@ void shift_element(int *, int);
 
 void insertion_sort(int *, int);
 
-
-
-
-// This code implemented from the pseudo code: https://en.wikipedia.org/wiki/Insertion_sort
 /**
  * Prints an array.
- * @param arr: Pointer for the array.
+ * @param arr: A Pointer to the array.
  * @param len: Length of the array.
  */
 void print(int *arr, int len) {
@@ -63,6 +63,11 @@ void shift_element(int *arr, int i) {
     SWITCH = 0;
 }
 
+/**
+ * Insertion sort for arrays.
+ * @param arr: A Pointer to the array.
+ * @param len: Length of the array.
+ */
 void insertion_sort(int *arr, int len) {
     int i = 1;
     while (i < len) {
@@ -76,15 +81,16 @@ int main() {
     int arr[SIZE];
     int num = 0;
 
-    // Create array "arr".
+    // Create the array.
     for (int i = 0; i < SIZE; i++) {
         scanf("%d", &num);
         *(arr + i) = num;
     }
 
-    // Sort "arr".
+    // Sort the array.
     insertion_sort(arr, SIZE);
 
+    // Print the array.
     print(arr, SIZE);
     return 0;
 }
