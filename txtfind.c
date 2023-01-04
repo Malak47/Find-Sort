@@ -154,6 +154,8 @@ int main() {
     while (row < ROW) {
         getLine(*(text + row++));
     }
+
+    // checks which function to run
     if (ch == 'a') {
         printLines();
     } else if (ch == 'b') {
